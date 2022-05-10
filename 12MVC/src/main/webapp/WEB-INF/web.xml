@@ -4,9 +4,25 @@
         <servlet-name>guardarEmpleado</servlet-name>
         <servlet-class>Servlet.guardarEmpleado</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>actualizarempleado</servlet-name>
+        <servlet-class>Servlet.actualizarempleado</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarempleado</servlet-name>
+        <servlet-class>Servlet.eliminarempleado</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>guardarEmpleado</servlet-name>
         <url-pattern>/guardarEmpleado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarempleado</servlet-name>
+        <url-pattern>/actualizarempleado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarempleado</servlet-name>
+        <url-pattern>/eliminarempleado</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
