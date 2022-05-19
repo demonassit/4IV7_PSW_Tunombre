@@ -59,9 +59,18 @@ public class MPersona {
             //establecemos la conexion
             con = Conexion.getConection();
             //querry
-            String q = "select * from mpersona "
+            //String q = "select * from mpersona "
+            //        + "where persona_user = ? and persona_pass= ?";
+            
+            String q = "select persona_nombre, pri.privilegio_tipo from mpersona as per"
+                    + "inner join cprivilegio as pri" +
+                    "on per.privilegio_id = pri.privilegio_id"
                     + "where persona_user = ? and persona_pass= ?";
+
+
             //prearo la sentencia
+            
+            
             ps = con.prepareStatement(q);
             //obtengo los elementos
             ps.setString(1, user);
@@ -72,6 +81,7 @@ public class MPersona {
             while(rs.next()){
                 //objeto persona
                 persona = new MPersona();
+                CPrivilegio pri = new CPrivilegio();
                 persona.setPersona_id(rs.getInt("persona_id"));
                 persona.setAlumno_boleta(rs.getInt("alumno_boleta"));
                 persona.setEmpleado_num(rs.getInt("empleado_num"));
@@ -85,6 +95,7 @@ public class MPersona {
                 persona.setGrupo_id(rs.getInt("grupo_id"));
                 persona.setRol_id(rs.getInt("rol_id"));
                 persona.setPrivilegio_id(rs.getInt("privilegio_id"));
+                pri.setPrivilegio_tipo(rs.getString("privilegio_tipo"));
                 break;
             }
             

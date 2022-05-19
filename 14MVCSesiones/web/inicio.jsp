@@ -46,7 +46,29 @@
         <h1>Si existes T_T</h1>
         
         <%
-        //obtener los privilegios  == 1    
+        //obtener los privilegios  == 1  
+        
+        /*
+        Aqui es donde necesito consultar la bitacora 
+        
+        select equipo_etiqueta, lab_nom, marca_nom, cpu_serial,  
+            config_descripcionMause, config_descripcionTeclado, monitor_descripcion, 
+            config_descripcion, edoEquipo_tipo, problema
+            from dequipo as eq
+            inner join claboratorio as la
+            ON (la.lab_id = eq.lab_id)
+            inner join cmarca as ma
+            ON (eq.marca_id = ma.marca_id)
+            inner join maccesorio as mac
+            ON(eq.accesorio_id = mac.accesorio_id)
+            inner join mmonitor as mo
+            ON(eq.monitor_id = mo.monitor_id )
+            inner join mconfiguracion as con
+            on(eq.config_id = con.config_id)
+            inner join cedoequipo as edo
+            on(eq.edoEquipo_id = edo.edoEquipo_id);
+        
+        */
         %>
         
         
